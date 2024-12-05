@@ -1,0 +1,1269 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/*Responsividade*/
+
+@media (max-width: 768px) {
+html{
+    font-size: 0.7rem;
+}
+}
+@media (max-width: 484px) {
+html{
+    font-size: 0.5rem;
+}
+}
+
+/*AJustes no cabeçalho*/
+
+/*Responsividade para as imagens*/
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    aspect-ratio: 2/4;
+    width: max-content;
+    height: max-content;
+}
+
+
+/*Ajutes no cabeçalho*/
+
+header {
+    background-color: #bd3c00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 90px;
+}
+nav {
+    background:transparent;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+}
+  
+.logo{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+  
+.logo:hover{
+    transform: scale(1.025);
+    background-color: #ffcc00;
+    color: #000000;
+    box-shadow: 0px 0px 20px #ffc800;
+}
+  
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+  
+  
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 1.5px;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+  
+  
+nav ul{
+    background:transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    max-width: 100vw;
+    list-style: none;
+    height: 70px;
+    gap: 1.5rem;
+}
+
+nav ul li a{
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 0.2rem;
+    transition: color 0.3s ease-in-out;
+}
+  
+nav ul li a:hover{
+    background-color: #ffc400;
+    color: #000000;
+}
+  
+/* Media Query para Mobile */
+  
+
+@media screen and (max-width: 768px) {
+  
+    .mobile-menu-btn {
+        display: flex;
+        z-index: 1000;
+        position: relative;
+    }
+  
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: #000000;
+        transition: 0.5s ease;
+        z-index: 999;
+    }
+  
+    .nav-links.active {
+        right: 0;
+    }
+  
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-inline: 1.8rem;
+    }
+  
+    nav ul {
+        padding: 10rem 0rem;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+
+    }
+  
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding:6px 0;
+    }
+  
+    nav ul li a {
+        padding: 15px 30px;
+        font-size: 1.6rem;
+        display: block;
+        margin: 0;
+        transition: transform 0.25s ease, box-sizing 0.25s ease, box-shadow 0.25s ease;
+    }
+  
+    nav ul li a:hover {
+        transform: translateY(1.025);
+        box-shadow: 2px 2px 20px #ffb300, -2px -2px 20px #ffe600;
+        box-sizing: border-box;
+    }
+  
+    /* Animação do botão hamburguer */
+  
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(2.5px, 2.5px);
+    }
+  
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+  
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/*Ajustes na primeira seção*/
+
+.alpha{
+    background-image: linear-gradient(to bottom,#bd3c00, #000000);
+    height: 980px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.alpha .container{
+    background-image: linear-gradient(to bottom,#bd3c00, #000000);
+    max-width: 100vw;
+    width: 95%;
+    height: 920px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.alpha .container .box{
+    background:transparent;
+    width: 50%;
+    height: 820px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.alpha .container .box >div{
+    background:transparent;
+    max-width: 100vw;
+    width: 100%;
+    height: 130px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+   
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.alpha .container .box >div:hover{
+    transform: scale(1.025)translateY(-6px);
+    color: #ffffff;
+}
+
+.alpha .container .box >div h2{
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-block: 0.6rem;
+}
+.alpha .container .box >div p{
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-block: 0.2rem;
+}
+.alpha .container .box >div ul{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 1.6rem;
+}
+.alpha .container .box >div ul li{
+    background-color: #000000;
+    padding: 0.8rem 1.2rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-block: 0.2rem;
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.alpha .container .box >div ul li:hover{
+    transform: scale(1.025)translateY(-4px);
+    box-shadow: 2px 2px 20px #fbff00, -2px -2px 20px #ffea00;
+    background-color: #ffdd00;
+    color: #000000;
+}
+
+.alpha .container .box >div:nth-child(3){
+    display:block;
+}
+
+.alpha .container .box >div a{
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 5px;
+    margin-block: 0.4rem;
+    transition: background-color 0.3s ease;
+}
+
+.alpha .container .box >div a:hover{
+    background-color: #ffee00;
+    color: #000000;
+    cursor: pointer;
+}
+.alpha .container .image{
+    background:transparent;
+    width: 40%;
+    height: 820px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alpha .container .image img{
+    width: 80%;
+    height: auto;
+    background-size: contain;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alpha .container .image img:hover{
+    transform: scale(1.025)translateX(-20px);
+}
+
+/*Responsividade*/
+
+@media(max-width: 768px){
+    /*Ajustes para a primeira seção*/
+   .alpha {
+        height: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.8rem;
+   }
+
+   .alpha .container {
+        background: transparent;
+        height: 1000px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.8rem;
+        color: #ffffff;
+        text-align: center;
+        padding: 1rem;
+   }
+
+   .alpha .container .box {
+        background:transparent;
+        width: 100%;
+   }
+   .alpha .container .image{
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 0.8rem;
+        background-size: contain;
+        background-position: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   .alpha .container .image img{
+        height: auto;
+        background-size: contain;
+        background-position: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   .alpha .container .box >div {
+        background:transparent;
+        max-width: 100vw;
+        width: 100%;
+        height: 100px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.8rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+   }
+
+
+}
+
+/*Ajustes na segunda seção*/
+
+.beta{
+    background-color: #000000;
+    height: 1320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.beta .container{
+    background-color: #000000;
+    max-width: 100vw;
+    width: 95%;
+    height: 1270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.beta .container >div h2{
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-block: 0.6rem;
+}
+
+.beta .container .box{
+    background-color: #000000;
+    max-width: 100vw;
+    width: 100%;
+    height: 820px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.beta .container .box >div{
+    background-image: linear-gradient(to bottom, #101010, #000000);
+    max-width: 100vw;
+    width: 100%;
+    height: 490px;
+    text-align: left;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    gap: 0.4rem;
+    border-radius: 0.6rem;
+}
+
+
+
+.beta .container .box >div .item{
+    background-color: #101010;
+    padding: 0.8rem 1.2rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    max-width: 100vw;
+    width: 30%;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 0.4rem;
+    border-radius: 0.4rem;
+    margin-block: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.beta .container .box >div .item:hover{
+    transform: scale(1.025)translateY(-4px);
+    color: #000000;
+}
+.beta .container .box >div .item h3{
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-inline-start: 0.4rem;
+}
+
+.beta .container .box >div .item p{
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-inline-start: 0.4rem;
+}
+
+.beta .container .box >div .item span{
+    background-image: #f5a300;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-inline-start: 0.4rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: back-colors 1s linear infinite;
+}
+
+@keyframes back-colors {
+    0% {
+        background-color: #df4141;
+    }
+    50% {
+        background-color: #bd3c00;
+    }
+    100% {
+        background-color: #df4141;
+    }
+}
+
+.beta .container .box >div .item span i{
+    animation: colors 1.2s linear infinite;
+}
+
+
+@keyframes colors{
+    0% {
+        color: #ffffff;
+    }
+
+    50% {
+        color: #ffcc00;
+    }
+
+    100% {
+        color: #ffffff;
+    }
+}
+
+.beta .container .box >div .item ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1rem;
+    margin-block: 0.6rem;
+    color: #ffffff;
+}
+
+.beta .container .box >div .item ul li {
+    background-color: #1a1a1a;
+    padding: 0.4rem 0.8rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    margin-block: 0.2rem;
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+.beta .container .box >div .item ul li:hover {
+    transform: scale(1.025);
+    box-shadow: 2px 2px 20px #bd3c00, -2px -2px 20px #df4141;
+    background-color: #bd3c00;
+    color: #ffffff;
+    cursor: pointer;
+    border-bottom: 0.2px solid #bd3c00;
+}
+
+/* Estilos para o tooltip */
+
+.beta .container .box >div .item ul li i {
+    position: relative;
+    cursor: help;
+    color: #bd3c00;
+    font-style: normal;
+    margin-left: 0.5rem;
+}
+
+.beta .container .box >div .item ul li i::after {
+    content: attr(data-tooltip);
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    z-index: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 0.9rem;
+}
+
+.beta .container .box >div .item ul li i:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Suporte para dispositivos móveis */
+@media (hover: none) {
+    .beta .container .box >div .item ul li i::after {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .beta .container .box >div .item ul li i:active::after {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.beta .container .box >div .image{
+    background-image: linear-gradient(to bottom, #101010, #000000);
+    max-width: 100vw;
+    width: 50%;
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.beta .container .box >div .image img{
+    height: auto;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beta .container .box >div .image img:hover{
+    transform: scale(1.05)translateY(-4px);
+    cursor: pointer;
+}
+
+/*Ajustes na responsividade */
+
+@media (max-width: 768px) {
+
+   .beta{
+        background-color: #000000;
+        max-width: 100vw;
+        width: 100%;
+        height: 1480px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+   }
+   .beta .container{
+        max-width: 100vw;
+        width: 100%;
+        height: 580px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+   }
+   .beta .container >div h2{
+        font-size: 3.2rem;
+        margin-block: 1.8rem;
+   }
+   .beta .container .box >div{
+        background: transparent;
+        max-width: 100vw;
+        width: 95%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+   }
+   .beta .container .box >div .item{
+        width: 100%;
+        height: 380px;
+   }
+   .beta .container .box >div .image{
+        width: 100%;
+        order: -1;
+   }
+
+   .beta .container .box >div .image img{
+        height: auto;
+        width: 100%;
+        background-size: contain;
+        background-position: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+}
+/*Ajustes na  terceira seção*/
+
+.gamma{
+    background-color: #000000;
+    max-width: 100vw;
+    width: 100%;
+    height: 1270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.gamma .container {
+    background-color: #000000;
+    max-width: 100vw;
+    width: 100%;
+    height: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.gamma .container .box{
+    background:transparent;
+    max-width: 100vw;
+    width: 95%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.gamma .container .box >div{
+    background-image: linear-gradient(to bottom, #101010, #000000);
+    padding: 0.8rem 1.2rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    max-width: 100vw;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: left;
+    justify-content: center;
+    gap: 0.4rem;
+    border-radius: 0.4rem;
+    margin-block: 1rem;
+}
+
+.gamma .container .box >div .item{
+    background-color: #101011;
+    max-width: 100vw;
+    width: 35%;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-block: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.gamma .container .box >div .item:hover{
+    transform: scale(1.025);
+}
+.gamma .container .box >div .item h3{
+    color: #ffffff;
+    font-size: 2.4rem;
+    margin-block: 0.2rem;
+    margin-inline-start: 0.8rem;
+}
+
+.gamma .container .box >div .item p{
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-align: left;
+    margin-block: 0.6rem;
+    margin-inline-start: 0.8rem;
+}
+
+/*Efeitos no Span*/
+
+.gamma .container .box >div .item span{
+    background-image: #f5a300;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-inline-start: 0.8rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: back-colors 1s linear infinite;
+}
+
+/*Ajutes na linha não ordenada de estatisticas*/
+
+.gamma .container .box >div .item ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1rem;
+    margin-inline-start: 0.8rem;
+    margin-block: 0.6rem;
+    color: #ffffff;
+}
+
+.gamma .container .box >div .item ul li {
+    background-color: #1a1a1a;
+    padding: 0.4rem 0.8rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    margin-block: 0.2rem;
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+.gamma .container .box >div .item ul li:hover {
+    transform: scale(1.025);
+    box-shadow: 2px 2px 20px #bd3c00, -2px -2px 20px #df4141;
+    background-color: #bd3c00;
+    color: #ffffff;
+    cursor: pointer;
+    border-bottom: 0.2px solid #bd3c00;
+}
+
+/* Estilos para o tooltip */
+
+.gamma .container .box >div .item ul li i {
+    position: relative;
+    cursor: help;
+    color: #bd3c00;
+    font-style: normal;
+    margin-left: 0.5rem;
+}
+
+.gamma .container .box >div .item ul li i::after {
+    content: attr(data-tooltip);
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    z-index: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 0.9rem;
+}
+
+.gamma .container .box >div .item ul li i:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Suporte para dispositivos móveis */
+@media (hover: none) {
+    .gamma .container .box >div .item ul li i::after {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .gamma .container .box >div .item ul li i:active::after {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/*Ajustes nas imagens*/
+
+.gamma .container .box >div .image{
+    background-image: linear-gradient(to bottom, #101010, #000000);
+    max-width: 100vw;
+    width: 50%;
+    height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 1rem;
+}
+
+.gamma .container .box >div .image img{
+    height: auto;
+    width: 600px;
+    background-size: contain;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gamma .container .box >div .image img:hover{
+    transform: scale(1.05)translateY(-4px);
+    cursor: pointer;
+}
+
+/*Ajustes na responsividade*/
+
+@media (max-width: 768px) {
+   .gamma {
+        background-color: #000000;
+        max-width: 100vw;
+        width: 100%;
+        height: 1480px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+   }
+
+   .gamma .container .box {
+        height: 980px;
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+   }
+   .gamma .container .box >div{
+        background: transparent;
+        max-width: 100vw;
+        width: 100%;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+   }
+   .gamma .container .box >div .item{
+        width: 100%;
+        height: 380px;
+   }
+   .gamma .container .box >div .image{
+        width: 100%;
+        order: -1;
+   } 
+   .gamma .container .box >div .image img{
+        height: auto;
+        width: 100%;
+        background-size: contain;
+        background-position: center;
+   }
+
+}
+
+/*Ajustes na quarta seção*/
+
+.delta{
+    background-color: #000000;
+    max-width: 100vw;
+    width: 100%;
+    height: 1270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.delta .container{
+    background-color: #000000;
+    max-width: 100vw;
+    width: 100%;
+    height: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.delta .container >div h2{
+    color: #ffffff;
+    font-size: 3.2rem;
+    margin-block: 1rem;
+}
+
+.delta .container .box{
+    background:transparent;
+    max-width: 100vw;
+    width: 95%;
+    height: 880px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 0.4rem;
+}
+.delta .container .box >div{
+    background:transparent;
+    padding: 0.8rem 1.2rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    max-width: 100vw;
+    width: 40%;
+    height: 780px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.4rem;
+    margin-block: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delta .container .box >div:hover {
+    transform: scale(1.025)translateY(-6px);
+}
+
+.delta .container .box >div .image{
+    background-image: linear-gradient(to bottom, #101010, #000000);
+    max-width: 100vw;
+    width: 100%;
+    height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delta .container .box >div .image img{
+    height: auto;
+    width: 250px;
+    background-size: contain;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.delta .container .box >div .item{
+    background:transparent;
+    padding: 0.8rem 1.2rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    max-width: 100vw;
+    width: 100%;
+    height: 680px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.4rem;
+}
+.delta .container .box >div .item h3{
+    font-size: 2.8rem;
+    margin-block: 0.4rem;
+}
+
+.delta .container .box >div .item p{
+    font-size: 1.4rem;
+    margin-block: 0.4rem;
+}
+
+.delta .container .box >div .item span{
+    background-image: #f5a300;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-inline-start: 0.8rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: back-colors 1s linear infinite;
+}
+
+/*Ajutes na linha não ordenada de estatisticas*/
+
+.delta .container .box >div .item ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1rem;
+    margin-inline-start: 0.8rem;
+    margin-block: 0.6rem;
+    color: #ffffff;
+}
+
+.delta .container .box >div .item ul li {
+    background-color: #1a1a1a;
+    padding: 0.4rem 0.8rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    margin-block: 0.2rem;
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+.delta .container .box >div .item ul li:hover {
+    transform: scale(1.025);
+    box-shadow: 2px 2px 20px #bd3c00, -2px -2px 20px #df4141;
+    background-color: #bd3c00;
+    color: #ffffff;
+    cursor: pointer;
+    border-bottom: 0.2px solid #bd3c00;
+}
+
+/* Estilos para o tooltip */
+
+.delta .container .box >div .item ul li i {
+    position: relative;
+    cursor: help;
+    color: #bd3c00;
+    font-style: normal;
+    margin-left: 0.5rem;
+}
+
+.delta .container .box >div .item ul li i::after {
+    content: attr(data-tooltip);
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    z-index: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 0.9rem;
+}
+
+.delta .container .box >div .item ul li i:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Suporte para dispositivos móveis */
+@media (hover: none) {
+    .delta .container .box >div .item ul li i::after {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .delta .container .box >div .item ul li i:active::after {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/*Ajustes na responsividade*/
+
+@media (max-width: 768px) {
+    .delta{
+        background-color: #000000;
+        max-width: 100vw;
+        width: 100%;
+        height: 1480px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+   }
+
+   .delta .container .box {
+        height: 1380px;
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+   }
+
+   .delta .container .box >div{
+        background: transparent;
+        max-width: 100vw;
+        width: 100%;
+        height: 570px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+   }
+   .delta .container .box >div .item{
+        width: 100%;
+        height: 380px;
+   }
+   .delta .container .box >div .image{
+        width: 100%;
+        order: -1;
+   } 
+   .delta .container .box >div .image img{
+        height: 400px;
+        width: 100%;
+        background-size: contain;
+        background-position: center;
+   }
+}
+
+/*Ajustes no rodapé ao final da página*/
+
+footer {
+    background-image: linear-gradient(to top, #bd3c00, #000000);
+    height: 390px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+footer >div{
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 40%;
+    text-align: center;
+}
+footer >div >div:nth-child(2){
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+footer >div >div:nth-child(2) a{
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer >div >div:nth-child(2) a:hover{
+    color: #d8f500;
+    text-decoration: underline;
+}
+
+footer >div  >div:nth-child(3) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+footer >div  >div:nth-child(3) ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+    margin-block: 1.1rem;
+}
+footer >div  >div:nth-child(3) ul a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer >div  >div:nth-child(3) ul i{
+    font-size: 1.4rem;
+    transition: transform 0.3s ease-in-out, 0.3s ease;
+}
+footer >div  >div:nth-child(3) ul i:hover{
+    transform: scale(1.1)translateY(-8px);
+}
+/*Responsividade*/
+@media (max-width: 768px) {
+    footer{
+        width: 100%;
+    }
+    footer >div {
+        width: 100%;
+        margin-block: 0.4rem;
+
+    }
+    footer >div >div {
+        width: 100%;
+        margin-block: 0.4rem;
+    }
+}
